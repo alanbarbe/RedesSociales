@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="../templates/styles.css">
+    <link rel="shortcut icon" href="../../../favicon3.ico" type="image/x-icon">
+</head>
+<body class="body">
+    <main class="contenidoPrincipal instagram">
+        <section class="contenedorNombre">
+            <img src="../../assets/ig.svg" class="logo" alt="">
+            <h1 class="titulo">Instagram</h1>
+        </section>
+        <p class="texto">
+            Instagram es una aplicación y red social de origen estadounidense, propiedad de Facebook, cuya función principal es poder compartir fotografías y vídeos con otros usuarios. Está disponible para dispositivos Android, iOS y Windows 10.
+            <br><br>
+            Creada por Kevin Systrom y Mike Krieger, Instagram fue lanzada en octubre de 2010. Esta aplicación ganó rápidamente popularidad, llegando a tener más de 100 millones de usuarios activos en abril de 2012 y más de 300 millones en diciembre de 2014. Instagram fue diseñada originariamente para iPhone y a su vez está disponible para sus hermanos iPad y iPod con el sistema iOS 3.0.2 o superior. A principios de abril de 2012, se publicó una versión para Android, y en 2013 se lanzó la versión beta para Windows Phone y oficial para Windows 10 en 2016.
+            <br><br>
+            Instagram también posee un medio de comunicación privado para hablar llamado Instagram Direct, y una función llamada Historias (en inglés, Stories) donde todas las personas pueden publicar fotografías y vídeos temporales a su perfil, agregando variados filtros y efectos, con una duración máxima de permanencia de 24 horas; que también se pueden guardar en el perfil permanentemente para que puedan ser vistos, como «Historias destacadas».
+            <br><br>
+            Según datos de DataReportal en enero de 2020 Instagram era la sexta red social más utilizada a nivel mundial, con alrededor de 1000 millones de usuarios activos mensuales.  A septiembre de 2020, la cuenta con más seguidores es la propia de Instagram, con más de 365 millones de seguidores.  El hombre más seguido es el futbolista portugués Cristiano Ronaldo con más de 242 millones de seguidores,  mientras que la mujer más seguida es la cantante estadounidense Ariana Grande con más de 206 millones de seguidores.
+        </p>
+        <section class="botones">
+            <a href="#" class="instagram-ir"><img src="../../assets/expandir.svg" class="image" alt=""> <b>Ir a la página</b> </a>
+            <a href="https://play.google.com/store/apps/details?id=com.instagram.android" target="_blank" class="boton playstore"><img src="../../assets/ps.svg" alt="">Playstore</a>
+            <a href="https://apps.apple.com/us/app/instagram/id389801252" target="_blank" class="boton appstore"><img src="../../assets/ap.svg" alt=""> Appstore</a>
+        </section>
+    </main>
+    <script>
+        const $ = el => document.querySelector(el);
+        const FB = $('.instagram-ir');
+        FB.addEventListener('click', ()=>{
+            $('.instagram-ir > b').innerHTML = "";
+            FB.style.width = '5rem';
+            FB.style.animationName = 'btn';
+            FB.style.animationIterationCount = '1';
+            FB.style.animationDuration = '1s';
+            setTimeout(() => {
+                $('.botones > .instagram-ir > img').style.display = 'block';
+                setTimeout(() => {
+                    $('.botones > .instagram-ir > img').setAttribute('src', '../../assets/expandir2.svg');
+                    setTimeout(() => {
+                        $('.botones > .instagram-ir > img').setAttribute('src', '../../assets/expandir.svg');
+                    }, 200)
+                }, 100)
+                setTimeout(() => {
+                    window.open('https://instagram.com/', '_blank')
+                    setTimeout(() => {
+                        $('.botones > .instagram-ir > img').setAttribute('src', '#');
+                        FB.style.animationName = 'btn2';
+                        $('.instagram-ir').innerHTML = '<img src="../../assets/expandir.svg" class="image" alt="">  <b>Ir a la página</b>';
+                    },1000);
+                }, 500);
+            }, 200);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+    <link rel="stylesheet" href="../templates/styles.css">
+    <link rel="shortcut icon" href="../../../favicon3.ico" type="image/x-icon">
+</head>
+<body class="body">
+    <main class="contenidoPrincipal youtube">
+        <section class="contenedorNombre">
+            <img src="../../assets/yt.svg" class="logo" alt="">
+            <h1 class="titulo">Youtube</h1>
+        </section>
+        <p class="texto">
+            YouTube es un sitio web de origen estadounidense dedicado a compartir videos. Presenta una variedad de clips de películas, programas de televisión y vídeos musicales, así como contenidos amateur como videoblogs y YouTube Gaming. Las personas que crean contenido para esta plataforma generalmente son conocidas como youtubers.
+            <br><br>
+            Fue creado por tres antiguos empleados de PayPal en febrero de 2005 y, en octubre de 2006 fue adquirido por Google Inc. a cambio de 1650 millones de dólares y ahora opera como una de sus filiales. Es el sitio web de su tipo más utilizado en internet.
+            <br><br>
+            YouTube usa un reproductor en línea basado en HTML5, que incorporó poco después de que la W3C lo presentara y que es soportado por los navegadores web más difundidos. Antiguamente su reproductor funcionaba con Adobe Flash, pero esta herramienta fue desechada en 2016. Los enlaces a vídeos de YouTube pueden ser también insertados en blogs y sitios electrónicos personales usando API o incrustando cierto código HTML.
+            <br><br>
+            A partir de agosto de 2018, el sitio web está clasificado como el segundo sitio más popular del mundo, según Alexa Internet, justo detrás de Google. A partir de mayo de 2019, se suben a YouTube más de 500 horas de contenido de vídeo cada minuto. Según los ingresos publicitarios trimestrales reportados, se estima que YouTube tiene ingresos anuales de US $ 15 mil millones.
+        </p>
+        <section class="botones">
+            <a href="#" class="youtube-ir"><img src="../../assets/expandir.svg" class="image" alt=""> <b>Ir a la página</b> </a>
+            <a href="https://play.google.com/store/apps/details?id=com.google.android.youtube&hl=es_AR&gl=US" target="_blank" class="boton playstore"><img src="../../assets/ps.svg" alt="">Playstore</a>
+            <a href="https://apps.apple.com/ar/app/youtube/id544007664" target="_blank" class="boton appstore"><img src="../../assets/ap.svg" alt=""> Appstore</a>
+        </section>
+    </main>
+    <script>
+        const $ = el => document.querySelector(el);
+        const FB = $('.youtube-ir');
+        FB.addEventListener('click', ()=>{
+            $('.youtube-ir > b').innerHTML = "";
+            FB.style.width = '5rem';
+            FB.style.animationName = 'btn';
+            FB.style.animationIterationCount = '1';
+            FB.style.animationDuration = '1s';
+            setTimeout(() => {
+                $('.botones > .youtube-ir > img').style.display = 'block';
+                setTimeout(() => {
+                    $('.botones > .youtube-ir > img').setAttribute('src', '../../assets/expandir2.svg');
+                    setTimeout(() => {
+                        $('.botones > .youtube-ir > img').setAttribute('src', '../../assets/expandir.svg');
+                    }, 200)
+                }, 100)
+                setTimeout(() => {
+                    window.open('https://youtube.com/', '_blank')
+                    setTimeout(() => {
+                        $('.botones > .youtube-ir > img').setAttribute('src', '#');
+                        FB.style.animationName = 'btn2';
+                        $('.youtube-ir').innerHTML = '<img src="../../assets/expandir.svg" class="image" alt="">  <b>Ir a la página</b>';
+                    },1000);
+                }, 500);
+            }, 200);
+        });
+    </script>
+</body>
+</html>

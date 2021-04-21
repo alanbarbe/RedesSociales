@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter</title>
+    <link rel="stylesheet" href="../templates/styles.css">
+    <link rel="shortcut icon" href="../../../favicon3.ico" type="image/x-icon">
+</head>
+<body class="body">
+    <main class="contenidoPrincipal twitter">
+        <section class="contenedorNombre">
+            <img src="../../assets/tw.svg" class="logo" alt="">
+            <h1 class="titulo">Twitter</h1>
+        </section>
+        <p class="texto">
+            Twitter es un servicio de microblogueo, con sede en San Francisco, California, EE. UU., con filiales en San Antonio (Texas) y Boston (Massachusetts) en Estados Unidos. Twitter, Inc. fue creado originalmente en California, pero está bajo la jurisdicción de Delaware desde 2007.6 Desde que Jack Dorsey lo creó en marzo de 2006, y lo lanzó en julio del mismo año, la red ha ganado popularidad mundial y se estima que tiene más de 300 millones de usuarios, generando 65 millones de tuits al día y maneja más de 800 000 peticiones de búsqueda diarias. Ha sido denominado como el «SMS de Internet».
+            <br><br>
+            La red permite enviar mensajes de texto plano de corta longitud, con un máximo de 280 caracteres (originalmente 140), llamados tuits89 o tweets (aunque esta última acepción no está recogida en la RAE) , que se muestran en la página principal del usuario. Los usuarios pueden suscribirse a los tweets de otros usuarios –a esto se le llama seguir y a los usuarios abonados se les llama seguidores. Por defecto, los mensajes son públicos, pudiendo difundirse privadamente mostrándose únicamente a unos seguidores determinados. Los usuarios pueden tuitear desde la web del servicio, con aplicaciones oficiales externas (como para teléfonos inteligentes), o mediante el Servicio de mensajes cortos (SMS) disponible en ciertos países. Si bien el servicio es gratis, acceder a él vía SMS comporta soportar tarifas fijadas por el proveedor de telefonía móvil.
+            <br><br>
+            A fecha de 27 de abril de 2015, es conocido que el dominio fue registrado hace 15 años y 99 días, pero tres aspectos todavía no están claros: la fecha exacta de presentación pública del proyecto, si los tuits pueden ser o no redirigidos y si Twitter comparte los mensajes internos entre usuarios con la NSA.
+            <br><br>
+            En la actualidad Twitter factura más de 2500 millones de dólares anuales y tiene un valor en bolsa superior a los 15 000 millones de dólares.
+        </p>
+        <section class="botones">
+            <a href="#" class="twitter-ir"><img src="../../assets/expandir.svg" class="image" alt=""> <b>Ir a la página</b> </a>
+            <a href="https://play.google.com/store/apps/details?id=com.twitter.android" target="_blank" class="boton playstore"><img src="../../assets/ps.svg" alt="">Playstore</a>
+            <a href="https://apps.apple.com/us/app/twitter/id333903271" target="_blank" class="boton appstore"><img src="../../assets/ap.svg" alt=""> Appstore</a>
+        </section>
+    </main>
+    <script>
+        const $ = el => document.querySelector(el);
+        const FB = $('.twitter-ir');
+        FB.addEventListener('click', ()=>{
+            $('.twitter-ir > b').innerHTML = "";
+            FB.style.width = '5rem';
+            FB.style.animationName = 'btn';
+            FB.style.animationIterationCount = '1';
+            FB.style.animationDuration = '1s';
+            setTimeout(() => {
+                $('.botones > .twitter-ir > img').style.display = 'block';
+                setTimeout(() => {
+                    $('.botones > .twitter-ir > img').setAttribute('src', '../../assets/expandir2.svg');
+                    setTimeout(() => {
+                        $('.botones > .twitter-ir > img').setAttribute('src', '../../assets/expandir.svg');
+                    }, 200)
+                }, 100)
+                setTimeout(() => {
+                    window.open('https://twitter.com/', '_blank')
+                    setTimeout(() => {
+                        $('.botones > .twitter-ir > img').setAttribute('src', '#');
+                        FB.style.animationName = 'btn2';
+                        $('.twitter-ir').innerHTML = '<img src="../../assets/expandir.svg" class="image" alt="">  <b>Ir a la página</b>';
+                    },1000);
+                }, 500);
+            }, 200);
+        });
+    </script>
+</body>
+</html>

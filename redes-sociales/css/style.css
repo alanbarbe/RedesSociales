@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;800;900&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0mm;
+    padding: 0mm;
+    color: var(--light);
+    font-family: 'Inter', sans-serif;
+}
+html {
+    overflow-x: hidden;
+    font-size: 62.5%;
+}
+:root{
+    --dark: #171717;
+    --light: #f1f1f8;
+    --ig: linear-gradient(90deg, #FFC107 0%, #F44336 50%, #9C27B0 100%);
+    --fb: #1976D2;
+    --yt: #F44336;
+    --wp: #4caf50;
+    --tw: #03a9f4;
+    --tk: #08fff9;
+}
+/* 1rem == 10px  */
+.body{
+    background-color: var(--dark);
+}
+.tituloContenedor{
+    width: 100rem;
+    margin: 2rem auto;
+}
+.titulo{
+    font-size: 3rem;
+}
+.subtitulo{
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+.tarjetasContenedor{
+    display: grid;
+    margin: 2rem auto;
+    width: 100rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.tarjeta{
+    position: relative;
+    width: 30rem;
+    height: 60vh;
+    padding: 2rem;
+    border: 0.7rem solid var(--light);
+    border-radius: 1.3rem;
+    margin-bottom: 3rem;
+}
+.imagenTarjeta{
+    width: auto;
+    height: 5rem;
+    margin-bottom: 1rem;
+}
+.tituloTarjeta{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.textoTarjeta{
+    font-size: 1.7rem;
+    font-weight: 200;
+}
+.botonTarjeta{
+    font-size: 2rem;
+    font-weight: 600;
+    position: absolute;
+    top: 47vh;
+    text-decoration: none;
+    width: 24.6rem;
+    height: 5rem;
+    text-align: center;
+    line-height: 5rem;
+    border-radius: 1.2rem;
+}
+.instagram-b{
+    position: relative;
+    border: 7px solid transparent;
+    border-radius: 12px;
+    background: #171717;
+    background-clip: padding-box;
+    padding: 2rem;
+    transition: .5s;
+}
+.instagram-b::after{
+    position: absolute;
+    top: -7px; bottom: -7px;
+    left: -7px; right: -7px;
+    background: var(--ig);
+    content: '';
+    z-index: -1;
+    border-radius: 12px;
+}
+.instagram-b:hover{
+    box-shadow: 0 3px 40px #9C27B0;
+}
+.instagram{
+    background: var(--ig);
+}
+.facebook-b{
+    border-color: var(--fb);
+    transition: .5s;
+}
+.facebook{
+    background-color: var(--fb);
+}
+.facebook-b:hover{
+    box-shadow: 0 3px 40px var(--fb);
+}
+.youtube{
+    background-color: var(--yt);
+}
+.youtube-b{
+    border-color: var(--yt);
+    transition: .5s;
+}
+.youtube-b:hover{
+    box-shadow: 0 3px 40px var(--yt);
+}
+
+.whatsapp{
+    background-color: var(--wp);
+}
+.whatsapp-b{
+    border-color: var(--wp);
+    transition: .5s;
+}
+.whatsapp-b:hover{
+    box-shadow: 0 3px 40px var(--wp);
+}
+
+.twitter{
+    background-color: var(--tw);
+}
+.twitter-b{
+    border-color: var(--tw);
+    transition: .5s;
+}
+.twitter-b:hover{
+    box-shadow: 0 3px 40px var(--tw);
+}
+
+.tiktok{
+    background-color: var(--tk);
+    color: var(--dark);
+}
+.tiktok-b{
+    border-color: var(--tk);
+    transition: .5s;
+}
+.tiktok-b:hover{
+    box-shadow: 0 3px 40px var(--tk);
+}
+@media only screen and (max-width: 1000px){
+    .tarjetasContenedor{
+        display: grid;
+        margin: 2rem auto;
+        width: 90vw;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .body{
+        overflow-x: hidden;
+    }
+}
+@media only screen and (max-width: 710px){
+    .body{
+        overflow-x: hidden;
+    }
+    .tarjetasContenedor{
+        display: grid;
+        margin: 2rem auto;
+        width: 90vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    .tarjeta{
+        width: auto;
+    }
+    .tituloContenedor{
+        margin-left: 2rem;
+    }
+    .botonTarjeta{
+        width: 76.5vw;
+        top: 40vh;
+    }
+    .youtube-b, .facebook-b, .tiktok-b, .whatsapp-b, .twitter-b, .instagram-b{
+        padding: 1.3rem;
+    }
+    .botones{
+        max-width: 200px !important;
+        width: 200px !important;
+    }
+}

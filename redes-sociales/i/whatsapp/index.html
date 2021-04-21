@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp</title>
+    <link rel="stylesheet" href="../templates/styles.css">
+    <link rel="shortcut icon" href="../../../favicon3.ico" type="image/x-icon">
+</head>
+<body class="body">
+    <main class="contenidoPrincipal whatsapp">
+        <section class="contenedorNombre">
+            <img src="../../assets/wp.svg" class="logo" alt="">
+            <h1 class="titulo">Whatsapp</h1>
+        </section>
+        <p class="texto">
+            WhatsApp Messenger es una aplicación de mensajería instantánea para teléfonos inteligentes, en la que se envían y reciben mensajes mediante Internet, así como imágenes, vídeos, audios, grabaciones de audio (notas de voz), documentos, ubicaciones, contactos, gifs, stickers, así como llamadas y videollamadas con varios participantes a la vez, entre otras funciones. WhatsApp se integra automáticamente a la libreta de contactos, lo que lo diferencia de otras aplicaciones, ya que no es necesario ingresar alguna contraseña o PIN para acceder al servicio.
+            <br><br>
+            Según datos de principios del año 2020, es líder en mensajería instantánea en gran parte del mundo, en el que supera los 2000 millones de usuarios, superando a otras aplicaciones como Facebook Messenger o Telegram, entre otros.
+            <br><br>
+            Si bien la aplicación se lanzó en 2009 principalmente para iOS, y un año después para Android, se popularizó masivamente desde el año 2012 aproximadamente, hasta la actualidad. WhatsApp desplazó al servicio de SMS, revolucionando para siempre el servicio de mensajería instantánea gracias a la multiplicación de los teléfonos inteligentes y del acceso a Internet.
+            <br><br>
+            El 19 de febrero de 2014, la aplicación fue adquirida por la empresa Facebook por 19.000 millones de dólares. A principios de octubre, se anunció la compra definitiva de WhatsApp por Facebook por valor de 21.800 millones de dólares. Algunas semanas después de la compra, WhatsApp anunció tener capacidad para realizar videollamadas en el verano del mismo año. El despliegue definitivo de VoIP llegó progresivamente durante 2015 a todas las plataformas móviles.
+        </p>
+        <section class="botones">
+            <a href="#" class="whatsapp-ir"><img src="../../assets/expandir.svg" class="image" alt=""> <b>Ir a la página</b> </a>
+            <a href="https://play.google.com/store/apps/details?id=com.whatsapp&hl=es_AR&gl=US" target="_blank" class="boton playstore"><img src="../../assets/ps.svg" alt="">Playstore</a>
+            <a href="https://apps.apple.com/ar/app/whatsapp-messenger/id310633997" target="_blank" class="boton appstore"><img src="../../assets/ap.svg" alt=""> Appstore</a>
+        </section>
+    </main>
+    <script>
+        const $ = el => document.querySelector(el);
+        const FB = $('.whatsapp-ir');
+        FB.addEventListener('click', ()=>{
+            $('.whatsapp-ir > b').innerHTML = "";
+            FB.style.width = '5rem';
+            FB.style.animationName = 'btn';
+            FB.style.animationIterationCount = '1';
+            FB.style.animationDuration = '1s';
+            setTimeout(() => {
+                $('.botones > .whatsapp-ir > img').style.display = 'block';
+                setTimeout(() => {
+                    $('.botones > .whatsapp-ir > img').setAttribute('src', '../../assets/expandir2.svg');
+                    setTimeout(() => {
+                        $('.botones > .whatsapp-ir > img').setAttribute('src', '../../assets/expandir.svg');
+                    }, 200)
+                }, 100)
+                setTimeout(() => {
+                    window.open('https://whatsapp.com/', '_blank')
+                    setTimeout(() => {
+                        $('.botones > .whatsapp-ir > img').setAttribute('src', '#');
+                        FB.style.animationName = 'btn2';
+                        $('.whatsapp-ir').innerHTML = '<img src="../../assets/expandir.svg" class="image" alt="">  <b>Ir a la página</b>';
+                    },1000);
+                }, 500);
+            }, 200);
+        });
+    </script>
+</body>
+</html>

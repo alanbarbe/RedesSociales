@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiktok</title>
+    <link rel="stylesheet" href="../templates/styles.css">
+    <link rel="shortcut icon" href="../../../favicon3.ico" type="image/x-icon">
+</head>
+<body class="body">
+    <main class="contenidoPrincipal tiktok">
+        <section class="contenedorNombre">
+            <img src="../../assets/tk.svg" class="logo" alt="">
+            <h1 class="titulo">Tiktok</h1>
+        </section>
+        <p class="texto">
+            TikTok, es un servicio de redes sociales para compartir videos propiedad de la empresa china ByteDance. La plataforma de redes sociales se utiliza para hacer una variedad de videos de formato corto, desde géneros como danza, comedia y educación, que tienen una duración de tres segundos a un minuto (tres minutos para algunos usuarios). TikTok es una versión internacional de Douyin, que se lanzó originalmente en el mercado chino en septiembre de 2016.7 Más tarde, TikTok se lanzó en 2017 para iOS y Android en la mayoría de los mercados fuera de China continental; sin embargo, solo estuvo disponible en todo el mundo después de fusionarse con otro servicio de redes sociales chino, Musical.ly, el 2 de agosto de 2018.
+        <br><br>
+        TikTok y Douyin tienen casi la misma interfaz de usuario pero no tienen acceso al contenido del otro. Cada uno de sus servidores está basado en el mercado donde la aplicación respectiva está disponible.8 Los dos productos son similares, pero las características no son idénticas. Douyin incluye una función de búsqueda en video que puede buscar por la cara de las personas para ver más videos de ellos y otras características como comprar, reservar hoteles y hacer reseñas geoetiquetadas.9 Desde su lanzamiento en 2016, TikTok/Douyin ganó rápidamente popularidad en Asia Oriental, Asia del Sur, el Sudeste Asiático, Estados Unidos, Turquía, Rusia y otras partes del mundo. A octubre de 2020, TikTok superó los 2 mil millones de descargas móviles en todo el mundo.
+        </p>
+        <section class="botones">
+            <a href="#" class="tiktok-ir"><img src="../../assets/expandir.svg" class="image" alt=""> <b>Ir a la página</b> </a>
+            <a href="https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically" target="_blank" class="boton playstore"><img src="../../assets/ps.svg" alt="">Playstore</a>
+            <a href="https://apps.apple.com/us/app/tiktok/id835599320" target="_blank" class="boton appstore"><img src="../../assets/ap.svg" alt=""> Appstore</a>
+        </section>
+    </main>
+    <script>
+        const $ = el => document.querySelector(el);
+        const FB = $('.tiktok-ir');
+        FB.addEventListener('click', ()=>{
+            $('.tiktok-ir > b').innerHTML = "";
+            FB.style.width = '5rem';
+            FB.style.animationName = 'btn';
+            FB.style.animationIterationCount = '1';
+            FB.style.animationDuration = '1s';
+            setTimeout(() => {
+                $('.botones > .tiktok-ir > img').style.display = 'block';
+                setTimeout(() => {
+                    $('.botones > .tiktok-ir > img').setAttribute('src', '../../assets/expandir2.svg');
+                    setTimeout(() => {
+                        $('.botones > .tiktok-ir > img').setAttribute('src', '../../assets/expandir.svg');
+                    }, 200)
+                }, 100)
+                setTimeout(() => {
+                    window.open('https://tiktok.com/', '_blank')
+                    setTimeout(() => {
+                        $('.botones > .tiktok-ir > img').setAttribute('src', '#');
+                        FB.style.animationName = 'btn2';
+                        $('.tiktok-ir').innerHTML = '<img src="../../assets/expandir.svg" class="image" alt="">  <b>Ir a la página</b>';
+                    },1000);
+                }, 500);
+            }, 200);
+        });
+    </script>
+</body>
+</html>
